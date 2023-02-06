@@ -1,0 +1,24 @@
+// Methode: 1
+// Logic : n is power of 4 if n/4 is power of 4. 
+//       : n is not power of 4 if n % 3 == 0 or n % 4 != 0.
+// T = O(log4N) || S = O(log4N)
+// class Solution {
+//     public boolean isPowerOfFour(int n) {
+//         if(n == 1) return true;
+//         if(n <= 0 || n % 3 == 0 || n %4 != 0) return false;
+//         return isPowerOfFour(n/4);
+//     }
+// }
+
+
+
+// Methode: 2
+// Logic : If a is power of b then Math.log10(a)/Math.log10(b) is an integer;
+// T = O(1) | S = O(1)
+class Solution {
+    public boolean isPowerOfFour(int n) {
+       double ans = Math.log10(n)/Math.log10(4);
+       if( ans - (int)ans == 0) return true;
+       return false;
+    }
+}
